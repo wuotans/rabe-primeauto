@@ -1,0 +1,22 @@
+{
+  "name": "DamageType",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nome do tipo de avaria"
+    },
+    "icon": {
+      "type": "string",
+      "description": "\u00cdcone ou emoji representativo"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Se est\u00e1 ativo para sele\u00e7\u00e3o"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}
