@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }) => {
       setIsAuthenticated(false);
       setAuthChecked(true);
       if (error.status === 401 || error.status === 403) {
-        setAuthError({ type: 'auth_required', message: 'Authentication required' });
+        setAuthError(null);
       } else {
         setAuthError({ type: 'unknown', message: error.message || 'Failed to validate session' });
       }
@@ -45,6 +45,7 @@ export const AuthProvider = ({ children }) => {
   const logout = (shouldRedirect = true) => {
     setUser(null);
     setIsAuthenticated(false);
+    setAuthError(null);
     api.auth.logout(shouldRedirect ? '/login' : null);
   };
 
